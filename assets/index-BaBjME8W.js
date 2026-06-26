@@ -17155,4 +17155,4 @@ http://www.naturalearthdata.com/`,category:`Cesium ion`,creationFunction:functio
       way["highway"](${e},${t},${n},${r});
     );
     out geom;
-    `;(await(await fetch(`https://overpass-api.de/api/interpreter`,{method:`POST`,body:i})).json()).elements.filter(e=>e.type===`way`).forEach(e=>{if(!e.geometry)return;let t=e.geometry.map(e=>y.fromDegrees(e.lon,e.lat));Q9.entities.add({polyline:{positions:t,width:2,material:z.YELLOW}})})}
+    `;(await(await fetch(`https://overpass-api.de/api/interpreter`,{method:`POST`,body:i})).json()).elements.filter(e=>e.type===`way`).forEach(e=>{if(!e.geometry)return;let t=e.geometry.map(e=>y.fromDegrees(e.lon,e.lat));Q9.entities.add({polyline:{positions:t,width:2,material:z.YELLOW,clampToGround:!0}})})}
