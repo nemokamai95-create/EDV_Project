@@ -17154,16 +17154,18 @@ http://www.naturalearthdata.com/`,category:`Cesium ion`,creationFunction:functio
 
     vec3 pos = fsInput.attributes.positionMC;
 
-    // model height (Y axis in model space is usually "up")
     float height = pos.z;
 
-    // normalize (rough approximation)
     float normalizedHeight = clamp(height / 100.0, 0.0, 1.0);
 
-    if (normalizedHeight > 0.75) {
-      material.diffuse = vec3(1.0, 0.0, 0.0);
-    } else {
-      material.diffuse = vec3(0.8, 0.8, 0.8);
+    if (normalizedHeight < 0.25) {
+      material.diffuse = vec3(0.0, 0.0, 1.0); // BLUE bottom 25%
+    }
+    else if (normalizedHeight > 0.75) {
+      material.diffuse = vec3(1.0, 0.0, 0.0); // RED top 25%
+    }
+    else {
+      material.diffuse = vec3(0.8, 0.8, 0.8); // middle
     }
   }
 `}),await e.readyPromise;let t=new y(0,0,20);e.modelMatrix=I.multiplyByTranslation(e.modelMatrix,t,new I),Z9.flyTo(e,{duration:3,offset:new HY(g.toRadians(0),g.toRadians(-45),500)})}a$e(),document.getElementById(`flyBtn`).addEventListener(`click`,()=>{s$e()});var o$e=new f4(Z9.scene.canvas),$9=new Set;o$e.setInputAction(e=>{let t=Z9.scene.pick(e.position);if(!u(t))return;let n=t.id||t;$9.has(n)?($9.delete(n),t.color=z.WHITE):($9.add(n),t.color=z.YELLOW)},L2.LEFT_CLICK);function s$e(){Z9.flyTo(Q9,{duration:3,offset:new HY(g.toRadians(0),g.toRadians(-45),500)})}
