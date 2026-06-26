@@ -31,7 +31,6 @@ async function load() {
   viewer.scene.primitives.add(tileset);
 
   await tileset.readyPromise;
-    tileset.heightReference.
 
     viewer.flyTo(tileset, {
     duration: 3,

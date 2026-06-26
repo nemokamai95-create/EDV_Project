@@ -6,10 +6,10 @@ const cesiumSourceSegments = cesiumSource.split("/").length;
 const cesiumBaseUrl = "cesiumStatic";
 
 export default defineConfig({
-  base: './',
+  base: '/EDV_Project/',
   appType: 'mpa',
   define: {
-    CESIUM_BASE_URL: JSON.stringify(`./${cesiumBaseUrl}`),
+    CESIUM_BASE_URL: JSON.stringify(`${cesiumBaseUrl}`),
   },
   esbuild: {
     supported: {
